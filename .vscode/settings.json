@@ -1,1 +1,7 @@
-{}
+{
+  "sweetpad.simulator.deviceId": "384A7C87-2395-4805-A546-DC2144908AA8",
+  "sweetpad.simulator.deviceName": "iPhone 17",
+  "sweetpad.simulator.runtime": "iOS 26.0",
+  "sweetpad.scheme": "firstapp",
+  "sweetpad.configuration": "Debug"
+}

@@ -1,0 +1,13 @@
+# SweetPad Configuration for firstapp
+# Using iPhone 17 with iOS 26.0
+
+[project]
+name = "firstapp"
+scheme = "firstapp"
+
+[simulator]
+# iPhone 17 (iOS 26.0)
+device_id = "384A7C87-2395-4805-A546-DC2144908AA8"
+device_name = "iPhone 17"
+runtime = "iOS 26.0"
+
