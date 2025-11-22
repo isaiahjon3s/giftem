@@ -12,8 +12,8 @@
 	"argv": [
 		"/opt/homebrew/bin/xcode-build-server"
 	],
-	"workspace": "/Users/isaiahjones/Desktop/firstapp/firstapp.xcodeproj/project.xcworkspace",
-	"build_root": "/Users/isaiahjones/Library/Developer/Xcode/DerivedData/firstapp-enomsepcbfwopfgjdnccapwqydsj",
-	"scheme": "firstapp",
+	"workspace": "/Users/isaiahjones/Desktop/giftem/giftem.xcodeproj/project.xcworkspace",
+	"build_root": "/Users/isaiahjones/Library/Developer/Xcode/DerivedData/giftem-enomsepcbfwopfgjdnccapwqydsj",
+	"scheme": "giftem",
 	"kind": "xcode"
 }

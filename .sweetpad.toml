@@ -1,9 +1,9 @@
-# SweetPad Configuration for firstapp
+# SweetPad Configuration for giftem
 # Using iPhone 17 with iOS 26.0
 
 [project]
-name = "firstapp"
-scheme = "firstapp"
+name = "giftem"
+scheme = "giftem"
 
 [simulator]
 # iPhone 17 (iOS 26.0)

@@ -1,13 +1,13 @@
 //
-//  firstappUITestsLaunchTests.swift
-//  firstappUITests
+//  giftemUITestsLaunchTests.swift
+//  giftemUITests
 //
 //  Created by Isaiah Jones on 9/21/25.
 //
 
 import XCTest
 
-final class firstappUITestsLaunchTests: XCTestCase {
+final class giftemUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -12,37 +12,37 @@
 			containerPortal = B796C31C2E7FB4C600EFC1FB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B796C3232E7FB4C600EFC1FB;
-			remoteInfo = firstapp;
+			remoteInfo = giftem;
 		};
 		B796C33C2E7FB4C800EFC1FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B796C31C2E7FB4C600EFC1FB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B796C3232E7FB4C600EFC1FB;
-			remoteInfo = firstapp;
+			remoteInfo = giftem;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B796C3242E7FB4C600EFC1FB /* firstapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B796C3312E7FB4C800EFC1FB /* firstappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = firstappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B796C33B2E7FB4C800EFC1FB /* firstappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = firstappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B796C3242E7FB4C600EFC1FB /* giftem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = giftem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B796C3312E7FB4C800EFC1FB /* giftemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = giftemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B796C33B2E7FB4C800EFC1FB /* giftemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = giftemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		B796C3262E7FB4C600EFC1FB /* firstapp */ = {
+		B796C3262E7FB4C600EFC1FB /* giftem */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = firstapp;
+			path = giftem;
 			sourceTree = "<group>";
 		};
-		B796C3342E7FB4C800EFC1FB /* firstappTests */ = {
+		B796C3342E7FB4C800EFC1FB /* giftemTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = firstappTests;
+			path = giftemTests;
 			sourceTree = "<group>";
 		};
-		B796C33E2E7FB4C800EFC1FB /* firstappUITests */ = {
+		B796C33E2E7FB4C800EFC1FB /* giftemUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = firstappUITests;
+			path = giftemUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		B796C31B2E7FB4C600EFC1FB = {
 			isa = PBXGroup;
 			children = (
-				B796C3262E7FB4C600EFC1FB /* firstapp */,
-				B796C3342E7FB4C800EFC1FB /* firstappTests */,
-				B796C33E2E7FB4C800EFC1FB /* firstappUITests */,
+				B796C3262E7FB4C600EFC1FB /* giftem */,
+				B796C3342E7FB4C800EFC1FB /* giftemTests */,
+				B796C33E2E7FB4C800EFC1FB /* giftemUITests */,
 				B796C3252E7FB4C600EFC1FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		B796C3252E7FB4C600EFC1FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B796C3242E7FB4C600EFC1FB /* firstapp.app */,
-				B796C3312E7FB4C800EFC1FB /* firstappTests.xctest */,
-				B796C33B2E7FB4C800EFC1FB /* firstappUITests.xctest */,
+				B796C3242E7FB4C600EFC1FB /* giftem.app */,
+				B796C3312E7FB4C800EFC1FB /* giftemTests.xctest */,
+				B796C33B2E7FB4C800EFC1FB /* giftemUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B796C3232E7FB4C600EFC1FB /* firstapp */ = {
+		B796C3232E7FB4C600EFC1FB /* giftem */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B796C3452E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "firstapp" */;
+			buildConfigurationList = B796C3452E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "giftem" */;
 			buildPhases = (
 				B796C3202E7FB4C600EFC1FB /* Sources */,
 				B796C3212E7FB4C600EFC1FB /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				B796C3262E7FB4C600EFC1FB /* firstapp */,
+				B796C3262E7FB4C600EFC1FB /* giftem */,
 			);
-			name = firstapp;
+			name = giftem;
 			packageProductDependencies = (
 			);
-			productName = firstapp;
-			productReference = B796C3242E7FB4C600EFC1FB /* firstapp.app */;
+			productName = giftem;
+			productReference = B796C3242E7FB4C600EFC1FB /* giftem.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B796C3302E7FB4C800EFC1FB /* firstappTests */ = {
+		B796C3302E7FB4C800EFC1FB /* giftemTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B796C3482E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "firstappTests" */;
+			buildConfigurationList = B796C3482E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "giftemTests" */;
 			buildPhases = (
 				B796C32D2E7FB4C800EFC1FB /* Sources */,
 				B796C32E2E7FB4C800EFC1FB /* Frameworks */,
@@ -131,18 +131,18 @@
 				B796C3332E7FB4C800EFC1FB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				B796C3342E7FB4C800EFC1FB /* firstappTests */,
+				B796C3342E7FB4C800EFC1FB /* giftemTests */,
 			);
-			name = firstappTests;
+			name = giftemTests;
 			packageProductDependencies = (
 			);
-			productName = firstappTests;
-			productReference = B796C3312E7FB4C800EFC1FB /* firstappTests.xctest */;
+			productName = giftemTests;
+			productReference = B796C3312E7FB4C800EFC1FB /* giftemTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B796C33A2E7FB4C800EFC1FB /* firstappUITests */ = {
+		B796C33A2E7FB4C800EFC1FB /* giftemUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B796C34B2E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "firstappUITests" */;
+			buildConfigurationList = B796C34B2E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "giftemUITests" */;
 			buildPhases = (
 				B796C3372E7FB4C800EFC1FB /* Sources */,
 				B796C3382E7FB4C800EFC1FB /* Frameworks */,
@@ -154,13 +154,13 @@
 				B796C33D2E7FB4C800EFC1FB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				B796C33E2E7FB4C800EFC1FB /* firstappUITests */,
+				B796C33E2E7FB4C800EFC1FB /* giftemUITests */,
 			);
-			name = firstappUITests;
+			name = giftemUITests;
 			packageProductDependencies = (
 			);
-			productName = firstappUITests;
-			productReference = B796C33B2E7FB4C800EFC1FB /* firstappUITests.xctest */;
+			productName = giftemUITests;
+			productReference = B796C33B2E7FB4C800EFC1FB /* giftemUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B796C31F2E7FB4C600EFC1FB /* Build configuration list for PBXProject "firstapp" */;
+			buildConfigurationList = B796C31F2E7FB4C600EFC1FB /* Build configuration list for PBXProject "giftem" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B796C3232E7FB4C600EFC1FB /* firstapp */,
-				B796C3302E7FB4C800EFC1FB /* firstappTests */,
-				B796C33A2E7FB4C800EFC1FB /* firstappUITests */,
+				B796C3232E7FB4C600EFC1FB /* giftem */,
+				B796C3302E7FB4C800EFC1FB /* giftemTests */,
+				B796C33A2E7FB4C800EFC1FB /* giftemUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		B796C3332E7FB4C800EFC1FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B796C3232E7FB4C600EFC1FB /* firstapp */;
+			target = B796C3232E7FB4C600EFC1FB /* giftem */;
 			targetProxy = B796C3322E7FB4C800EFC1FB /* PBXContainerItemProxy */;
 		};
 		B796C33D2E7FB4C800EFC1FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B796C3232E7FB4C600EFC1FB /* firstapp */;
+			target = B796C3232E7FB4C600EFC1FB /* giftem */;
 			targetProxy = B796C33C2E7FB4C800EFC1FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -395,6 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59KY3C9M6Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take photos.";
@@ -409,7 +410,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sycrar.firstapp;
+				PRODUCT_BUNDLE_IDENTIFIER = sycrar.giftem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -428,6 +429,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59KY3C9M6Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take photos.";
@@ -442,7 +444,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sycrar.firstapp;
+				PRODUCT_BUNDLE_IDENTIFIER = sycrar.giftem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -463,7 +465,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sycrar.firstappTests;
+				PRODUCT_BUNDLE_IDENTIFIER = sycrar.giftemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -471,7 +473,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firstapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/firstapp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/giftem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/giftem";
 			};
 			name = Debug;
 		};
@@ -484,7 +486,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sycrar.firstappTests;
+				PRODUCT_BUNDLE_IDENTIFIER = sycrar.giftemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -492,7 +494,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firstapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/firstapp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/giftem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/giftem";
 			};
 			name = Release;
 		};
@@ -503,7 +505,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sycrar.firstappUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = sycrar.giftemUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -511,7 +513,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = firstapp;
+				TEST_TARGET_NAME = giftem;
 			};
 			name = Debug;
 		};
@@ -522,7 +524,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sycrar.firstappUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = sycrar.giftemUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -530,14 +532,14 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = firstapp;
+				TEST_TARGET_NAME = giftem;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B796C31F2E7FB4C600EFC1FB /* Build configuration list for PBXProject "firstapp" */ = {
+		B796C31F2E7FB4C600EFC1FB /* Build configuration list for PBXProject "giftem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B796C3432E7FB4C800EFC1FB /* Debug */,
@@ -546,7 +548,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B796C3452E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "firstapp" */ = {
+		B796C3452E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "giftem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B796C3462E7FB4C800EFC1FB /* Debug */,
@@ -555,7 +557,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B796C3482E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "firstappTests" */ = {
+		B796C3482E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "giftemTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B796C3492E7FB4C800EFC1FB /* Debug */,
@@ -564,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B796C34B2E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "firstappUITests" */ = {
+		B796C34B2E7FB4C800EFC1FB /* Build configuration list for PBXNativeTarget "giftemUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B796C34C2E7FB4C800EFC1FB /* Debug */,
