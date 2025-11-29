@@ -225,6 +225,32 @@ This project uses no external dependencies - pure SwiftUI and native iOS framewo
 - UserNotifications
 - Foundation
 
+## 🎨 Design Workflow with Figma
+
+Want to customize and enhance the app design? We've created a **complete Figma workflow system** for you!
+
+### 📚 Start Here
+**[GETTING_STARTED_WITH_FIGMA.md](GETTING_STARTED_WITH_FIGMA.md)** - Your entry point to the design workflow
+
+### 📖 Complete Guide Set
+
+| Guide | Purpose | Time |
+|-------|---------|------|
+| **[FIGMA_QUICKSTART.md](FIGMA_QUICKSTART.md)** | Get set up in Figma immediately | 30 min |
+| **[FIGMA_WORKFLOW.md](FIGMA_WORKFLOW.md)** | Complete design-to-development process | 60 min read |
+| **[DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)** | All design tokens and specifications | Reference |
+| **[FIGMA_TO_SWIFTUI_EXAMPLES.md](FIGMA_TO_SWIFTUI_EXAMPLES.md)** | Code translation examples | Reference |
+| **[FIGMA_GUIDES_OVERVIEW.md](FIGMA_GUIDES_OVERVIEW.md)** | Quick reference for all guides | 5 min |
+
+### What You'll Learn
+1. ✅ Taking your current app into Figma
+2. ✅ Creating a professional design system
+3. ✅ Designing new features and screens
+4. ✅ Translating Figma designs to SwiftUI code
+5. ✅ Best practices for iOS design
+
+**👉 Start with [GETTING_STARTED_WITH_FIGMA.md](GETTING_STARTED_WITH_FIGMA.md) to begin your design journey!**
+
 ## 🎯 Future Enhancements
 
 Potential features for future development:
