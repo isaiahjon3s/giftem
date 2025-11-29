@@ -90,7 +90,7 @@ struct LiquidGlassTabView<Content: View>: View {
     
     // MARK: - Tab Bar
     private var tabBar: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 0) {
             ForEach(Array(tabs.enumerated()), id: \.offset) { index, tab in
                 Button {
                     // Don't trigger if already selected
@@ -104,74 +104,51 @@ struct LiquidGlassTabView<Content: View>: View {
                         onTabSelected(index)
                     }
                 } label: {
-                    VStack(spacing: 6) {
-                        // Tab icon
-                        Image(systemName: tab.icon)
-                            .font(.system(size: 20, weight: .semibold))
-                            .symbolEffect(.bounce, value: selectedTab == index)  // Bounce when selected
-                        
-                        // Tab title
-                        Text(tab.title)
-                            .font(.caption.weight(.semibold))
-                    }
-                    .foregroundStyle(selectedTab == index ? .primary : .secondary)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 12)
-                    .background(tabBackground(isSelected: selectedTab == index, accent: tab.accent))
-                    .overlay(alignment: .top) {
-                        // Selection indicator
-                        if selectedTab == index {
-                            Capsule(style: .continuous)
-                                .fill(.primary)
-                                .frame(width: 36, height: 3)
-                                .matchedGeometryEffect(id: "indicator", in: indicatorNamespace)
-                                .offset(y: -6)
-                        }
-                    }
+                    // Icon-only tab button
+                    Image(systemName: tab.icon)
+                        .font(.system(size: 24, weight: selectedTab == index ? .semibold : .regular))
+                        .symbolEffect(.bounce, value: selectedTab == index)
+                        .foregroundStyle(selectedTab == index ? tab.accent : Color.primary.opacity(0.5))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 56)
+                        .background(
+                            // Selection pill background
+                            ZStack {
+                                if selectedTab == index {
+                                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                        .fill(tab.accent.opacity(0.15))
+                                        .matchedGeometryEffect(id: "selectedTab", in: indicatorNamespace)
+                                }
+                            }
+                        )
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             }
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 10)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 6)
         .background(
-            // Tab bar background
-            RoundedRectangle(cornerRadius: 32, style: .continuous)
+            // Liquid Glass tab bar background
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
                 .fill(.ultraThinMaterial)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 32, style: .continuous)
+                    RoundedRectangle(cornerRadius: 24, style: .continuous)
                         .strokeBorder(
                             LinearGradient(
                                 colors: [
-                                    Color.white.opacity(0.45),
-                                    Color.white.opacity(0.12)
+                                    Color.white.opacity(0.5),
+                                    Color.white.opacity(0.1)
                                 ],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             ),
-                            lineWidth: 1
+                            lineWidth: 0.5
                         )
                 )
-                .shadow(color: .black.opacity(0.18), radius: 24, x: 0, y: 14)
+                .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: 10)
+                .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
         )
-        // Apply the Liquid Glass effect
-        .liquidGlass(blur: blur, reflection: reflection, motionSensitivity: motionSensitivity)
-    }
-    
-    // MARK: - Tab Background
-    /// Creates the background for individual tabs
-    @ViewBuilder
-    private func tabBackground(isSelected: Bool, accent: Color) -> some View {
-        RoundedRectangle(cornerRadius: 24, style: .continuous)
-            .fill(
-                isSelected ? 
-                Color(.systemGray6) :
-                Color.clear
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .stroke(Color.primary.opacity(isSelected ? 0.2 : 0.0), lineWidth: 1)
-            )
     }
     
     // MARK: - Haptic Feedback

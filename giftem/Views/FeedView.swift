@@ -56,7 +56,7 @@ struct FeedView: View {
                             ZStack(alignment: .topTrailing) {
                                 Image(systemName: "bell.fill")
                                     .font(.system(size: 22))
-                                    .foregroundColor(.primary)
+                                    .foregroundColor(Color(red: 0x7F/255.0, green: 0x3F/255.0, blue: 0x98/255.0))
                                 
                                 // Red badge for unread notifications
                                 Circle()
@@ -215,41 +215,41 @@ struct PostCard: View {
             .padding(.vertical, 12)
             .background(Color(.systemBackground))
             
-            // Enhanced Product Image with gradient
+            // Enhanced Product Image
             if let product = product {
                 ZStack {
-                    // Beautiful gradient background based on category
-                    Rectangle()
-                        .fill(
-                            LinearGradient(
-                                colors: [
-                                    categoryColor(for: product.category),
-                                    categoryColor(for: product.category).opacity(0.8),
-                                    categoryColor(for: product.category).opacity(0.9)
-                                ],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
-                        .frame(height: 400)
-                    
-                    // Subtle overlay pattern
-                    Rectangle()
-                        .fill(
-                            RadialGradient(
-                                colors: [Color.white.opacity(0.1), Color.clear],
-                                center: .topLeading,
-                                startRadius: 50,
-                                endRadius: 400
-                            )
-                        )
-                        .frame(height: 400)
-                    
-                    // Large SF Symbol for product
-                    Image(systemName: categorySymbol(for: product.category))
-                        .font(.system(size: 120, weight: .thin))
-                        .foregroundColor(.white.opacity(0.9))
-                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+                    // Product Image
+                    if let firstImageURL = product.imageURLs.first {
+                        Image(firstImageURL)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 400)
+                            .clipped()
+                            .background(Color(.systemGray6))
+                    } else {
+                        // Fallback gradient background if no image
+                        ZStack {
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(
+                                        colors: [
+                                            categoryColor(for: product.category),
+                                            categoryColor(for: product.category).opacity(0.8),
+                                            categoryColor(for: product.category).opacity(0.9)
+                                        ],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+                                )
+                                .frame(height: 400)
+                            
+                            // SF Symbol for product (fallback)
+                            Image(systemName: categorySymbol(for: product.category))
+                                .font(.system(size: 120, weight: .thin))
+                                .foregroundColor(.white.opacity(0.9))
+                                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+                        }
+                    }
                 }
                 .onTapGesture {
                     showProductDetail = true

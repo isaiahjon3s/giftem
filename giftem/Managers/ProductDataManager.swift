@@ -11,6 +11,7 @@ import Combine
 @MainActor
 class ProductDataManager: ObservableObject {
     @Published var products: [Product] = []
+    private var hasAddedCustomProduct = false  // Track if user added custom products
     
     init() {
         createMockProducts()
@@ -18,150 +19,37 @@ class ProductDataManager: ObservableObject {
     
     private func createMockProducts() {
         products = [
-            // Electronics
+            // YOUR PRODUCTS - Add more below!
+            
+            // Product 1: Broken Lamp
             Product(
-                name: "Wireless AirPods Pro",
-                description: "Premium noise-canceling earbuds with spatial audio and adaptive EQ. Perfect for music lovers and professionals.",
-                price: 249.99,
-                originalPrice: 299.99,
-                imageURLs: ["airpods"],
-                category: .electronics,
-                sellerId: "seller1",
-                rating: 4.8,
-                reviewCount: 15420,
-                tags: ["audio", "wireless", "premium"]
-            ),
-            Product(
-                name: "Smart Watch Series 9",
-                description: "Advanced fitness tracking, heart rate monitoring, and seamless iPhone integration. Your health companion.",
-                price: 399.99,
-                originalPrice: 449.99,
-                imageURLs: ["smartwatch"],
-                category: .electronics,
-                sellerId: "seller2",
-                rating: 4.9,
-                reviewCount: 23410,
-                tags: ["fitness", "wearable", "health"]
+                name: "Broken Lamp",
+                description: "Does not work but if fixed it could be a very nice lamp.",
+                price: 1.99,
+                originalPrice: 3.00,
+                imageURLs: ["brokenlamp"],  // Make sure this exact name is in Assets
+                category: .home,  // Changed from .electronics to .home (better fit)
+                sellerId: "my-store",
+                rating: 1.8,
+                reviewCount: 67,
+                tags: ["lamp", "broken", "light", "vintage"]
             ),
             
-            // Fashion
+            // Add more of YOUR products below by copying the template:
+            /*
             Product(
-                name: "Designer Sunglasses",
-                description: "UV protection sunglasses with polarized lenses. Stylish and functional for everyday wear.",
-                price: 89.99,
-                originalPrice: 129.99,
-                imageURLs: ["sunglasses"],
-                category: .fashion,
-                sellerId: "seller3",
-                rating: 4.6,
-                reviewCount: 8765,
-                tags: ["accessories", "sunglasses", "style"]
+                name: "Your Product Name",
+                description: "Your product description",
+                price: 9.99,
+                originalPrice: 14.99,  // Optional - delete if no discount
+                imageURLs: ["your-image-name"],  // Must match Assets name
+                category: .home,  // Choose: .electronics, .fashion, .home, .beauty, .sports, .books, .toys, .food, .other
+                sellerId: "my-store",
+                rating: 5.0,
+                reviewCount: 10,
+                tags: ["tag1", "tag2"]
             ),
-            Product(
-                name: "Premium Leather Jacket",
-                description: "Genuine leather jacket with soft lining. Classic style that never goes out of fashion.",
-                price: 299.99,
-                originalPrice: 399.99,
-                imageURLs: ["jacket"],
-                category: .fashion,
-                sellerId: "seller4",
-                rating: 4.7,
-                reviewCount: 4321,
-                tags: ["leather", "jacket", "classic"]
-            ),
-            
-            // Home & Living
-            Product(
-                name: "Smart LED Light Strip",
-                description: "Color-changing LED strips with app control. Set the perfect ambiance for any room.",
-                price: 34.99,
-                originalPrice: 49.99,
-                imageURLs: ["ledlights"],
-                category: .home,
-                sellerId: "seller5",
-                rating: 4.5,
-                reviewCount: 12340,
-                tags: ["lighting", "smart", "decoration"]
-            ),
-            Product(
-                name: "Aromatherapy Diffuser",
-                description: "Ultrasonic essential oil diffuser with 7 color LED lights. Create a relaxing atmosphere.",
-                price: 29.99,
-                imageURLs: ["diffuser"],
-                category: .home,
-                sellerId: "seller6",
-                rating: 4.4,
-                reviewCount: 9876,
-                tags: ["wellness", "aromatherapy", "relaxation"]
-            ),
-            
-            // Beauty
-            Product(
-                name: "Skincare Set - 5 Items",
-                description: "Complete skincare routine with cleanser, toner, serum, moisturizer, and sunscreen.",
-                price: 79.99,
-                originalPrice: 119.99,
-                imageURLs: ["skincare"],
-                category: .beauty,
-                sellerId: "seller7",
-                rating: 4.8,
-                reviewCount: 15670,
-                tags: ["skincare", "routine", "complete"]
-            ),
-            
-            // Sports
-            Product(
-                name: "Yoga Mat Premium",
-                description: "Non-slip yoga mat with alignment lines. Perfect for yoga, pilates, and workouts.",
-                price: 39.99,
-                originalPrice: 59.99,
-                imageURLs: ["yogamat"],
-                category: .sports,
-                sellerId: "seller8",
-                rating: 4.7,
-                reviewCount: 8765,
-                tags: ["yoga", "fitness", "exercise"]
-            ),
-            Product(
-                name: "Wireless Running Earbuds",
-                description: "Sweat-proof earbuds with secure fit. Perfect for runners and athletes.",
-                price: 59.99,
-                originalPrice: 89.99,
-                imageURLs: ["runningbuds"],
-                category: .sports,
-                sellerId: "seller9",
-                rating: 4.6,
-                reviewCount: 11230,
-                tags: ["running", "audio", "sports"]
-            ),
-            
-            // Toys
-            Product(
-                name: "Educational Robot Kit",
-                description: "Build and program your own robot. Great for kids to learn coding and engineering.",
-                price: 89.99,
-                originalPrice: 129.99,
-                imageURLs: ["robotkit"],
-                category: .toys,
-                sellerId: "seller10",
-                rating: 4.9,
-                reviewCount: 5678,
-                tags: ["educational", "coding", "kids"]
-            ),
-            
-            // Food
-            Product(
-                name: "Artisan Coffee Bean Set",
-                description: "Premium coffee beans from around the world. 3 different varieties included.",
-                price: 49.99,
-                originalPrice: 69.99,
-                imageURLs: ["coffee"],
-                category: .food,
-                sellerId: "seller11",
-                rating: 4.8,
-                reviewCount: 9876,
-                tags: ["coffee", "gourmet", "gift"]
-            )
+            */
         ]
     }
     
@@ -190,6 +78,12 @@ class ProductDataManager: ObservableObject {
         category: ProductCategory,
         originalPrice: Double? = nil
     ) {
+        // Clear mock products when adding first custom product
+        if !hasAddedCustomProduct {
+            products.removeAll()
+            hasAddedCustomProduct = true
+        }
+        
         let newProduct = Product(
             name: name,
             description: description,
@@ -205,6 +99,18 @@ class ProductDataManager: ObservableObject {
         
         // Add to beginning of products array so it appears at top
         products.insert(newProduct, at: 0)
+    }
+    
+    // Optional: Clear all products and start fresh
+    func clearAllProducts() {
+        products.removeAll()
+        hasAddedCustomProduct = false
+    }
+    
+    // Optional: Reset to mock products
+    func resetToMockProducts() {
+        hasAddedCustomProduct = false
+        createMockProducts()
     }
 }
 
