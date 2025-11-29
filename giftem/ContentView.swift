@@ -27,8 +27,8 @@ struct ContentView: View {
     let tabs = [
         LiquidGlassTabItem(title: "Feed", icon: "house.fill", accent: .blue),
         LiquidGlassTabItem(title: "Search", icon: "magnifyingglass", accent: .green),
-        LiquidGlassTabItem(title: "Messages", icon: "message.fill", accent: .pink),
         LiquidGlassTabItem(title: "Cart", icon: "cart.fill", accent: .orange),
+        LiquidGlassTabItem(title: "Messages", icon: "message.fill", accent: .pink),
         LiquidGlassTabItem(title: "Profile", icon: "person.fill", accent: .purple)
     ]
     
@@ -50,6 +50,9 @@ struct ContentView: View {
                             .environmentObject(userManager)
                             .environmentObject(productManager)
                     case 2:
+                        CartView()
+                            .environmentObject(productManager)
+                    case 3:
                         MessagesView(
                             messageManager: messageManager,
                             userManager: userManager
@@ -67,9 +70,6 @@ struct ContentView: View {
                                     .offset(x: 150, y: -400)
                                 : nil
                         )
-                    case 3:
-                        CartView()
-                            .environmentObject(productManager)
                     case 4:
                         if let currentUser = userManager.currentUser {
                             ProfileView(

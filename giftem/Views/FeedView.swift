@@ -14,6 +14,7 @@ struct FeedView: View {
     @State private var feedManager: FeedDataManager?
     @State private var cartManager: CartDataManager?
     @State private var selectedCategory: ProductCategory?
+    @State private var showAddProduct = false
     
     var filteredPosts: [Post] {
         guard let feedManager = feedManager else { return [] }
@@ -27,6 +28,52 @@ struct FeedView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
+                // LOGO HEADER with Action Buttons
+                HStack(spacing: 0) {
+                    // Logo on the left
+                    Image("giftem-logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 25)
+                        .padding(.leading, 16)
+                    
+                    Spacer()
+                    
+                    // Buttons on the right
+                    HStack(spacing: 16) {
+                        // Plus button (Add Product)
+                        Button(action: { showAddProduct = true }) {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.system(size: 24))
+                                .foregroundColor(Color(red: 0x7F/255.0, green: 0x3F/255.0, blue: 0x98/255.0))
+                        }
+                        
+                        // Notification button
+                        Button(action: {
+                            // TODO: Add notification action
+                            print("Notifications tapped")
+                        }) {
+                            ZStack(alignment: .topTrailing) {
+                                Image(systemName: "bell.fill")
+                                    .font(.system(size: 22))
+                                    .foregroundColor(.primary)
+                                
+                                // Red badge for unread notifications
+                                Circle()
+                                    .fill(Color.red)
+                                    .frame(width: 10, height: 10)
+                                    .offset(x: 4, y: -4)
+                            }
+                        }
+                    }
+                    .padding(.trailing, 16)
+                }
+                .padding(.vertical, 12)
+                .background(Color(.systemBackground))
+                
+                Divider()
+                    .padding(.bottom, 8)
+                
                 // Category Filter
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
@@ -81,6 +128,9 @@ struct FeedView: View {
             if cartManager == nil {
                 cartManager = CartDataManager(productManager: productManager)
             }
+        }
+        .sheet(isPresented: $showAddProduct) {
+            AddProductView(productManager: productManager)
         }
     }
 }

@@ -181,5 +181,30 @@ class ProductDataManager: ObservableObject {
     func getProductsByCategory(_ category: ProductCategory) -> [Product] {
         return products.filter { $0.category == category }
     }
+    
+    // Add custom product to the feed
+    func addCustomProduct(
+        name: String,
+        description: String,
+        price: Double,
+        category: ProductCategory,
+        originalPrice: Double? = nil
+    ) {
+        let newProduct = Product(
+            name: name,
+            description: description,
+            price: price,
+            originalPrice: originalPrice,
+            imageURLs: ["custom"],
+            category: category,
+            sellerId: "custom-seller",
+            rating: 5.0,
+            reviewCount: 0,
+            tags: ["custom", "new"]
+        )
+        
+        // Add to beginning of products array so it appears at top
+        products.insert(newProduct, at: 0)
+    }
 }
 
