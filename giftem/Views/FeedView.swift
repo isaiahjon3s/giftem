@@ -484,7 +484,7 @@ struct CategoryChip: View {
                     }
                 }
             )
-            .cornerRadius(20)
+            .cornerRadius(25)
             .shadow(
                 color: isSelected ? Color.black.opacity(0.3) : Color.clear,
                 radius: isSelected ? 8 : 0,
