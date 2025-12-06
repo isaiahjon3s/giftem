@@ -220,12 +220,15 @@ struct PostCard: View {
                 ZStack {
                     // Product Image
                     if let firstImageURL = product.imageURLs.first {
-                        Image(firstImageURL)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: 400)
-                            .clipped()
-                            .background(Color(.systemGray6))
+                        GeometryReader { geometry in
+                            Image(firstImageURL)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: geometry.size.width, height: 400)
+                                .clipped()
+                        }
+                        .frame(height: 400)
+                        .background(Color(.systemGray6))
                     } else {
                         // Fallback gradient background if no image
                         ZStack {

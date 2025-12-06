@@ -231,15 +231,28 @@ struct ProfileView: View {
                                     userManager: userManager,
                                     cartManager: CartDataManager(productManager: productManager)
                                 )) {
-                                    ZStack {
-                                        Rectangle()
-                                            .fill(categoryColor(for: product.category))
-                                            .aspectRatio(1, contentMode: .fit)
-                                        
-                                        Image(systemName: categorySymbol(for: product.category))
-                                            .font(.system(size: 40, weight: .thin))
-                                            .foregroundColor(.white.opacity(0.8))
+                                    GeometryReader { geometry in
+                                        ZStack {
+                                            // Show product image if available
+                                            if let firstImageURL = product.imageURLs.first {
+                                                Image(firstImageURL)
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: geometry.size.width, height: geometry.size.width)
+                                                    .clipped()
+                                            } else {
+                                                // Fallback to category color and icon
+                                                Rectangle()
+                                                    .fill(categoryColor(for: product.category))
+                                                
+                                                Image(systemName: categorySymbol(for: product.category))
+                                                    .font(.system(size: 40, weight: .thin))
+                                                    .foregroundColor(.white.opacity(0.8))
+                                            }
+                                        }
+                                        .frame(width: geometry.size.width, height: geometry.size.width)
                                     }
+                                    .aspectRatio(1, contentMode: .fit)
                                 }
                             }
                         }

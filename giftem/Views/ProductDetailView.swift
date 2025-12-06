@@ -52,38 +52,38 @@ struct ProductDetailView: View {
                 // Enhanced Product Images with gradient
                 TabView(selection: $selectedImageIndex) {
                     ForEach(0..<max(1, product.imageURLs.count), id: \.self) { index in
-                        ZStack {
-                            Rectangle()
-                                .fill(
-                                    LinearGradient(
-                                        colors: [
-                                            categoryColor(for: product.category),
-                                            categoryColor(for: product.category).opacity(0.8),
-                                            categoryColor(for: product.category).opacity(0.9)
-                                        ],
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                                )
-                                .frame(height: 400)
-                            
-                            // Subtle overlay
-                            Rectangle()
-                                .fill(
-                                    RadialGradient(
-                                        colors: [Color.white.opacity(0.1), Color.clear],
-                                        center: .topLeading,
-                                        startRadius: 50,
-                                        endRadius: 400
-                                    )
-                                )
-                                .frame(height: 400)
-                            
-                            Image(systemName: categorySymbol(for: product.category))
-                                .font(.system(size: 120, weight: .thin))
-                                .foregroundColor(.white.opacity(0.9))
-                                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+                        GeometryReader { geometry in
+                            ZStack {
+                                // Show actual product image if available
+                                if index < product.imageURLs.count {
+                                    Image(product.imageURLs[index])
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: geometry.size.width, height: 400)
+                                        .clipped()
+                                } else {
+                                    // Fallback gradient background
+                                    Rectangle()
+                                        .fill(
+                                            LinearGradient(
+                                                colors: [
+                                                    categoryColor(for: product.category),
+                                                    categoryColor(for: product.category).opacity(0.8),
+                                                    categoryColor(for: product.category).opacity(0.9)
+                                                ],
+                                                startPoint: .topLeading,
+                                                endPoint: .bottomTrailing
+                                            )
+                                        )
+                                    
+                                    Image(systemName: categorySymbol(for: product.category))
+                                        .font(.system(size: 120, weight: .thin))
+                                        .foregroundColor(.white.opacity(0.9))
+                                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+                                }
+                            }
                         }
+                        .frame(height: 400)
                     }
                 }
                 .frame(height: 400)

@@ -19,7 +19,9 @@ class ProductDataManager: ObservableObject {
     
     private func createMockProducts() {
         products = [
-            // YOUR PRODUCTS - Add more below!
+            // ============================================
+            // YOUR PRODUCTS - Edit the values below!
+            // ============================================
             
             // Product 1: Broken Lamp
             Product(
@@ -27,23 +29,53 @@ class ProductDataManager: ObservableObject {
                 description: "Does not work but if fixed it could be a very nice lamp.",
                 price: 1.99,
                 originalPrice: 3.00,
-                imageURLs: ["brokenlamp"],  // Make sure this exact name is in Assets
-                category: .home,  // Changed from .electronics to .home (better fit)
+                imageURLs: ["brokenlamp"],
+                category: .home,
                 sellerId: "my-store",
                 rating: 1.8,
                 reviewCount: 67,
                 tags: ["lamp", "broken", "light", "vintage"]
             ),
             
-            // Add more of YOUR products below by copying the template:
+            // Product 2: Rubber Duck
+            Product(
+                name: "Rubber Duck",
+                description: "Nice rubber duck. Perfect for bath time. It was my mother's favorite.",
+                price: 4.99,
+                originalPrice: 7.99,
+                imageURLs: ["duck"],
+                category: .toys,
+                sellerId: "my-store",
+                rating: 4.8,
+                reviewCount: 234,
+                tags: ["duck", "rubber", "bath", "toy", "yellow"]
+            ),
+            
+            // Product 3: Magic 8 Ball
+            Product(
+                name: "Magic 8 Ball",
+                description: "Ask it any yes or no question and shake for your answer. The fortune telling toy!",
+                price: 5.99,
+                originalPrice: 10.09,
+                imageURLs: ["8ball"],
+                category: .toys,
+                sellerId: "my-store",
+                rating: 4.5,
+                reviewCount: 156,
+                tags: ["8ball", "magic", "fortune", "toy", "game"]
+            ),
+            
+            // ============================================
+            // ADD MORE PRODUCTS BELOW using this template:
+            // ============================================
             /*
             Product(
                 name: "Your Product Name",
                 description: "Your product description",
                 price: 9.99,
-                originalPrice: 14.99,  // Optional - delete if no discount
-                imageURLs: ["your-image-name"],  // Must match Assets name
-                category: .home,  // Choose: .electronics, .fashion, .home, .beauty, .sports, .books, .toys, .food, .other
+                originalPrice: 14.99,  // Optional - remove for no discount
+                imageURLs: ["your-image-name"],  // Must match Assets name exactly
+                category: .home,  // Options: .electronics, .fashion, .home, .beauty, .sports, .books, .toys, .food, .other
                 sellerId: "my-store",
                 rating: 5.0,
                 reviewCount: 10,
