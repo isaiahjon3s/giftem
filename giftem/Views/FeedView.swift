@@ -72,7 +72,7 @@ struct FeedView: View {
                 .background(Color(.systemBackground))
                 
                 Divider()
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 1)
                 
                 // Category Filter
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -458,39 +458,39 @@ struct CategoryChip: View {
             }
         }) {
             HStack(spacing: 6) {
-                Image(systemName: icon)
-                    .font(.system(size: 13, weight: .semibold))
-                    .symbolEffect(.bounce, value: isSelected)
-                Text(title)
-                    .font(.system(size: 14, weight: .semibold))
-            }
-            .foregroundColor(isSelected ? .white : .primary)
-            .padding(.horizontal, 18)
-            .padding(.vertical, 10)
-            .background(
-                Group {
-                    if isSelected {
-                        LinearGradient(
-                            colors: [Color.black, Color.black.opacity(0.9)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    } else {
-                        LinearGradient(
-                            colors: [Color(.systemGray6), Color(.systemGray5)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    }
+                    Image(systemName: icon)
+                        .font(.system(size: 13, weight: .semibold))
+                        .symbolEffect(.bounce, value: isSelected)
+                    Text(title)
+                        .font(.system(size: 14, weight: .semibold))
                 }
-            )
-            .cornerRadius(25)
-            .shadow(
-                color: isSelected ? Color.black.opacity(0.3) : Color.clear,
-                radius: isSelected ? 8 : 0,
-                x: 0,
-                y: isSelected ? 4 : 0
-            )
+                .foregroundColor(isSelected ? .white : .primary)
+                .padding(.horizontal, 18)
+                .padding(.vertical, 10)
+                .background(
+                    Group {
+                        if isSelected {
+                            LinearGradient(
+                                colors: [Color.black, Color.black.opacity(0.9)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        } else {
+                            LinearGradient(
+                                colors: [Color(.systemGray6), Color(.systemGray5)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        }
+                    }
+                )
+                .cornerRadius(25)
+                .shadow(
+                    color: isSelected ? Color.black.opacity(0.3) : Color.clear,
+                    radius: isSelected ? 8 : 0,
+                    x: 0,
+                    y: isSelected ? 4 : 0
+                )
         }
         .scaleEffect(isPressed ? 0.95 : 1.0)
         .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
